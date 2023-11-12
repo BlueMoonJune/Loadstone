@@ -45,8 +45,7 @@ public class LoadstoneBlockEntity extends BlockEntity {
 
     private void setIsLoading(boolean value) {
         isLoading = value;
-        Loadstone.LOADSTONE.setActive(world, pos, value);
-        markDirty();
+        markDirty(world, pos, Loadstone.LOADSTONE.setActive(world, pos, value));
     }
 
 
