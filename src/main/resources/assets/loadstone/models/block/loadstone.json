@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "loadstone:block/loadstone_top",
+    "side": "loadstone:block/loadstone_side"
+  }
+}

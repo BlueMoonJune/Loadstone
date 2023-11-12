@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "bluemoonjune.loadstone.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"WorldLoad",
+		"LoadstoneCreation"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

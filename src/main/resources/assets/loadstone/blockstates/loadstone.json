@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=true": {
+      "model": "loadstone:block/loadstone_active"
+    },
+    "active=false": {
+      "model": "loadstone:block/loadstone"
+    }
+  }
+}
