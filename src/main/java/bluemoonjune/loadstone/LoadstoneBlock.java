@@ -63,6 +63,7 @@ public class LoadstoneBlock extends BlockWithEntity implements BlockEntityProvid
 
     public void setActive(World world, BlockPos pos, boolean active) {
         world.setBlockState(pos, world.getBlockState(pos).with(ACTIVE, active));
+        world.markDirty(pos);
         world.playSound(null, pos, SoundEvent.of(Identifier.tryParse(active ? "minecraft:block.respawn_anchor.charge" : "minecraft:block.respawn_anchor.deplete")), SoundCategory.BLOCKS, 1, 1);
     }
 

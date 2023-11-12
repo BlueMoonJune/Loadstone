@@ -21,6 +21,9 @@ public class LoadstoneBlockEntity extends BlockEntity {
 
     public static final int RANGE = 5;
 
+
+    private UUID owner = null;
+
     public UUID getOwner() {
         return owner;
     }
@@ -32,8 +35,7 @@ public class LoadstoneBlockEntity extends BlockEntity {
         }
     }
 
-    private UUID owner = null;
-
+    private boolean isInit = false;
 
     private boolean isLoading = false;
 
@@ -44,6 +46,7 @@ public class LoadstoneBlockEntity extends BlockEntity {
     private void setIsLoading(boolean value) {
         isLoading = value;
         Loadstone.LOADSTONE.setActive(world, pos, value);
+        markDirty();
     }
 
 
@@ -79,6 +82,10 @@ public class LoadstoneBlockEntity extends BlockEntity {
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, LoadstoneBlockEntity be) {
+        if (!be.isInit) {
+            be.setAreaForced(be.isLoading);
+            be.isInit = true;
+        }
         if (world.isClient()) return;;
         if (be.owner == null) return;
         boolean ownerPresent;
