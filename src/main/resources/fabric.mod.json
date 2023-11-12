@@ -3,13 +3,13 @@
 	"id": "loadstone",
 	"version": "${version}",
 	"name": "Loadstone",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Player-bound chunk loaders for a healthy server.",
 	"authors": [
-		"Me!"
+		"BlueMoonJune"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/Ovionyx/Loadstone"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/loadstone/icon.png",
