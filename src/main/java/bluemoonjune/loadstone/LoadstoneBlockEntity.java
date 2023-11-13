@@ -1,5 +1,6 @@
 package bluemoonjune.loadstone;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -45,7 +46,9 @@ public class LoadstoneBlockEntity extends BlockEntity {
 
     private void setIsLoading(boolean value) {
         isLoading = value;
-        markDirty(world, pos, Loadstone.LOADSTONE.setActive(world, pos, value));
+        BlockState newState = Loadstone.LOADSTONE.setActive(world, pos, value);
+        markDirty(world, pos, newState);
+        this.getWorld().updateListeners(this.getPos(), this.getCachedState(), newState, Block.NOTIFY_ALL);
     }
 
 
